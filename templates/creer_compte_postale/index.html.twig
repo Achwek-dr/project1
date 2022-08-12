@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Inscription</h1>
+
+                {{ form_start(CreerComptePostale) }}
+                <fieldset class="mb-3">
+                    <legend>L' identité</legend>
+
+                    {{ form_row(CreerComptePostale.Lastname) }}
+                    {{ form_row(CreerComptePostale.Firstname) }}
+                    {{ form_row(CreerComptePostale.email) }}
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend>les Coordonnées </legend>
+                    {{ form_row(CreerComptePostale.Adresse) }}
+                    {{ form_row(CreerComptePostale.Code_postale) }}
+                    {{ form_row(CreerComptePostale.Ville) }}
+
+                </fieldset>
+
+
+                {{ form_row(CreerComptePostale.plainPassword, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(CreerComptePostale.RGPDConsent) }}
+
+                <button type="submit" class=" btn btn-primary btn-lg my-3">ENVOYER</button>
+
+                </li>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
